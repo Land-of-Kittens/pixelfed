@@ -57,7 +57,7 @@ services:
     env_file:
       - .env.docker
     volumes:
-      - "db-data:/var/lib/mysql"
+      - "./db:/var/lib/mysql"
 
   redis:
     image: redis:5-alpine
