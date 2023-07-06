@@ -48,7 +48,7 @@ services:
     networks:
       - external
       - internal
-    command: gosu www-data php artisan horizon
+    entrypoint: /worker-entrypoint.sh
     depends_on:
       - db
       - redis
