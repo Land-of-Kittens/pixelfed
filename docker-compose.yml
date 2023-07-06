@@ -26,7 +26,7 @@ services:
       - external
       - internal
     ports:
-      - "8080:80"
+      - "8124:80"
     depends_on:
       - db
       - redis
