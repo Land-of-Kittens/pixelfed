@@ -70,7 +70,6 @@ services:
       - internal
 
 volumes:
-  db-data:
   redis-data:
   app-storage:
   app-bootstrap:
