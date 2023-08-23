@@ -1,9 +1,20 @@
 # Release Notes
 
-## [Unreleased](https://github.com/pixelfed/pixelfed/compare/v0.11.8...dev)
+## [Unreleased](https://github.com/pixelfed/pixelfed/compare/v0.11.9...dev)
+
+### Updates
+- Update FollowerService, add forget method to RelationshipService call to reduce load when mass purging ([347e4f59](https://github.com/pixelfed/pixelfed/commit/347e4f59))
+- Update FollowServiceWarmCache, improve handling larger following/follower lists ([61a6d904](https://github.com/pixelfed/pixelfed/commit/61a6d904))
+-  ([](https://github.com/pixelfed/pixelfed/commit/))
+
+## [v0.11.9 (2023-08-21)](https://github.com/pixelfed/pixelfed/compare/v0.11.8...v0.11.9)
 
 ### Added
 - Import from Instagram ([#4466](https://github.com/pixelfed/pixelfed/pull/4466)) ([cf3078c5](https://github.com/pixelfed/pixelfed/commit/cf3078c5))
+- Sign-in with Mastodon ([#4545](https://github.com/pixelfed/pixelfed/pull/4545)) ([45b9404e](https://github.com/pixelfed/pixelfed/commit/45b9404e))
+- Health check endpoint at /api/service/health-check ([ff58f970](https://github.com/pixelfed/pixelfed/commit/ff58f970))
+- Reblogs in home feed ([#4563](https://github.com/pixelfed/pixelfed/pull/4563)) ([b86d47bf](https://github.com/pixelfed/pixelfed/commit/b86d47bf))
+- Account Migrations ([#4578](https://github.com/pixelfed/pixelfed/pull/4578)) ([a9220e4e](https://github.com/pixelfed/pixelfed/commit/a9220e4e))
 
 ### Updates
 - Update Notifications.vue component, fix filtering logic to prevent endless spinner ([3df9b53f](https://github.com/pixelfed/pixelfed/commit/3df9b53f))
@@ -25,7 +36,33 @@
 - Update StatusRemoteUpdatePipeline, fix missing mime and size attributes that cause empty media previews on our mobile app ([ea54413e](https://github.com/pixelfed/pixelfed/commit/ea54413e))
 - Update ComposeModal.vue, fix scroll issue and dont hide scrollbar ([2d959fb3](https://github.com/pixelfed/pixelfed/commit/2d959fb3))
 - Update AccountImport, add select first 100 posts button ([625a76a5](https://github.com/pixelfed/pixelfed/commit/625a76a5))
--  ([](https://github.com/pixelfed/pixelfed/commit/))
+- Update ApiV1Controller, add include_reblogs attribute to home timeline ([37fd0342](https://github.com/pixelfed/pixelfed/commit/37fd0342))
+- Update rate limits, fixes #4537 ([1cc6274a](https://github.com/pixelfed/pixelfed/commit/1cc6274a))
+- Update Services, use zpopmin on predis ([4b2c66f5](https://github.com/pixelfed/pixelfed/commit/4b2c66f5))
+- Update Inbox, allow storing Create->Note activities without any local followers, disabled by default ([9fa6b3f7](https://github.com/pixelfed/pixelfed/commit/9fa6b3f7))
+- Update AP Helpers, preserve admin unlisted state before adding to NetworkTimelineService ([0704c7e0](https://github.com/pixelfed/pixelfed/commit/0704c7e0))
+- Update SearchApiV2Service, improve resolve query logic to better handle remote posts/profiles and local posts/profiles ([c61d0b91](https://github.com/pixelfed/pixelfed/commit/c61d0b91))
+- Update FollowPipeline, improve follower/following count calculation ([0b515767](https://github.com/pixelfed/pixelfed/commit/0b515767))
+- Update TransformImports command, increment status_count on profile model ([ba7551d8](https://github.com/pixelfed/pixelfed/commit/ba7551d8))
+- Update AP Helpers, improve url validation and add optional dns verification, disabled by default ([2bef3e41](https://github.com/pixelfed/pixelfed/commit/2bef3e41))
+- Update admin users blade view, show last_active_at and other info ([e0b48b29](https://github.com/pixelfed/pixelfed/commit/e0b48b29))
+- Update MediaStorageService, improve head header handling ([3590adbd](https://github.com/pixelfed/pixelfed/commit/3590adbd))
+- Update admin user view, improve previews ([ff2c16fe](https://github.com/pixelfed/pixelfed/commit/ff2c16fe))
+- Update FanoutDeletePipeline, fix AP object ([0d802c31](https://github.com/pixelfed/pixelfed/commit/0d802c31))
+- Update Remote Auth feature, fix custom domain bug and enforce banned domains ([acabf603](https://github.com/pixelfed/pixelfed/commit/acabf603))
+- Update StatusService, reduce cache ttl from 7 days to 6 hours ([59b64378](https://github.com/pixelfed/pixelfed/commit/59b64378))
+- Update ProfileController, allow albums in atom feed. Closes #4561. Fixes #4526 ([1c105a6c](https://github.com/pixelfed/pixelfed/commit/1c105a6c))
+- Update admin users view, fix website value. Closes #4557 ([c469d475](https://github.com/pixelfed/pixelfed/commit/c469d475))
+- Update StatusStatelessTransformer, allow unlisted reblogs ([1c13b518](https://github.com/pixelfed/pixelfed/commit/1c13b518))
+- Update ApiV1Controller, hydrate reblog state in home timeline ([13bdaa2e](https://github.com/pixelfed/pixelfed/commit/13bdaa2e))
+- Update Timeline component, improve reblog support ([29de91e5](https://github.com/pixelfed/pixelfed/commit/29de91e5))
+- Update timeline settings, add photo reblogs only option ([e2705b9a](https://github.com/pixelfed/pixelfed/commit/e2705b9a))
+- Update PostContent, add text cw warning ([911504fa](https://github.com/pixelfed/pixelfed/commit/911504fa))
+- Update ActivityPubFetchService, add validateUrl parameter to bypass url validation to fetch content from blocked instances ([3d1b6516](https://github.com/pixelfed/pixelfed/commit/3d1b6516))
+- Update RemoteStatusDelete pipeline ([71e92261](https://github.com/pixelfed/pixelfed/commit/71e92261))
+- Update RemoteStatusDelete pipeline ([fab8f25e](https://github.com/pixelfed/pixelfed/commit/fab8f25e))
+- Update RemoteStatusPipeline, fix reply check ([618b6727](https://github.com/pixelfed/pixelfed/commit/618b6727))
+- Update ApiV1Controller, add bookmarked to timeline entities ([ca746717](https://github.com/pixelfed/pixelfed/commit/ca746717))
 
 ## [v0.11.8 (2023-05-29)](https://github.com/pixelfed/pixelfed/compare/v0.11.7...v0.11.8)
 
